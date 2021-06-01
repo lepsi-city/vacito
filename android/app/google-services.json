@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1065915893959",
+    "project_id": "vacito",
+    "storage_bucket": "vacito.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065915893959:android:058e0013524298892956e2",
+        "android_client_info": {
+          "package_name": "city.lepsi.vacito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065915893959-ttr9n0frj1dbn3g9ip38rv2fvkpmsqo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFcvIt_XsP3vIz--UW5WUVoHaRzDfxw9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065915893959-ttr9n0frj1dbn3g9ip38rv2fvkpmsqo2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
