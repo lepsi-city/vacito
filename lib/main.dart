@@ -59,13 +59,14 @@ class _MyAppState extends State<MyApp> {
         builder: (context, snapshot) {
           // Check for errors
           if (snapshot.hasError) {
-            return Center(child: Text("Něco se pokazilo"));
+            print(snapshot.error);
+            return Center(child: Text("Něco se pokazilo", textDirection: TextDirection.ltr,));
           }
 
           // Once complete, show your application
           if (snapshot.connectionState == ConnectionState.done) {
             return MaterialApp(
-              title: 'lepší.vote',
+              title: 'vacito',
               initialRoute: '/',
               navigatorKey: navigatorKey,
               routes: {
