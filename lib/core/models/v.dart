@@ -24,17 +24,18 @@ class V {
   });
 
   factory V.fromMap(Map v) {
+    print("Making v");
     return V(
       ci: v["ci"],
       co: v["co"],
-      dn: v["dn"],
+      dn: v["dn"].toString(),
       dt: v["dt"],
       isss: v["is"],
       ma: v["ma"],
       mp: v["mp"],
-      sd: v["sd"],
-      tg: v["tg"],
-      vp: v["vp"],
+      sd: v["sd"].toString(),
+      tg: v["tg"].toString(),
+      vp: v["vp"].toString(),
     );
   }
 

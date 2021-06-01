@@ -12,11 +12,12 @@ class Hc1 {
   }
 
   factory Hc1.fromMap(Map data) {
+    print("Making Hc1");
     return Hc1(
       issuer: data[1],
-      issuedAt: data[6],
-      expirationTime: data[4],
-      certificate: data[-260][1],
+      issuedAt: data[6].toString(),
+      expirationTime: data[4].toString(),
+      certificate: DgcV1.fromMap(data[-260][1]),
     );
   }
 

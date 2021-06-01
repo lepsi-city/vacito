@@ -12,6 +12,7 @@ class Names {
   });
 
   factory Names.fromMap(Map names) {
+    print("Making names");
     return Names(
         foreName: names["fn"],
         givenName: names["gn"],

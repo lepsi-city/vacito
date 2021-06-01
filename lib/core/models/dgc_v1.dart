@@ -14,10 +14,11 @@ class DgcV1 {
   });
 
   factory DgcV1.fromMap(Map certificate) {
+    print("Making DcgV1");
     return DgcV1(
-      v: certificate["v"],
+      v: V.fromMap(certificate["v"][0]),
       dateOfBirth: certificate["dob"],
-      names: certificate["nam"],
+      names: Names.fromMap(certificate["nam"]),
       version: certificate["ver"]
     );
   }

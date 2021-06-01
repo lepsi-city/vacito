@@ -8,6 +8,8 @@ import 'package:cbor/cbor.dart';
 import 'package:dart_cose/dart_cose.dart';
 import 'package:typed_data/typed_data.dart';
 
+import 'package:vacito/core/models/hc1.dart';
+
 class HomeViewModel extends ChangeNotifier {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
@@ -55,8 +57,8 @@ class HomeViewModel extends ChangeNotifier {
       },
     );
     print(result.payload);
-
-    title = "Jmenujete se " + result.payload[-260][1]["nam"]["gn"] + " " + result.payload[-260][1]["nam"]["fn"];
+    Hc1 certmodel = Hc1.fromMap(result.payload);
+    title = "Jmenujete se " + certmodel.certificate!.names!.foreNameT! + " " + certmodel.certificate!.names!.givenNameT!;
 
     //controller!.pauseCamera();
   }
