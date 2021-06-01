@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import 'package:vacito/core/view_models/home.dart';
 
 class HomeScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
 
@@ -13,11 +14,28 @@ class HomeScreen extends StatelessWidget {
       viewModelBuilder: () => HomeViewModel(),
       onModelReady: (model) => model.init(),
       builder: (context, model, child) => Scaffold(
-          appBar: null,
-          body: Container(
-            child: Text("something"),
-          )
-      ),
-    );
+          appBar: AppBar(title: Text("Vacito")),
+          body: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 5,
+                child: QRView(
+                  key: model.qrKey,
+                  onQRViewCreated: model.onQRViewCreated,
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: (model.result != null)
+                      ? Text(
+                      'Barcode Type: ${describeEnum(model.result!.format)}   Data: ${model.result!.code}')
+                      : Text('Scan a code'),
+                ),
+              )
+            ],
+          ),
+        )
+      );
   }
 }
