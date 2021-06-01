@@ -22,6 +22,9 @@ class HomeViewModel extends ChangeNotifier {
 
   void init(BuildContext cxt) {
     context = cxt;
+    if(controller != null) {
+      controller!.resumeCamera();
+    }
   }
 
   void onQRViewCreated(QRViewController controller) {
@@ -62,6 +65,7 @@ class HomeViewModel extends ChangeNotifier {
     print(result.payload);
     Hc1 certmodel = Hc1.fromMap(result.payload);
     title = "Waiting...";
+    controller!.pauseCamera();
     Navigator.push(context,
       MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),);
   }

@@ -1,22 +1,22 @@
 class Names {
-  String? foreName; //fn
+  String? familyName; //fn
   String? givenName; //gn
-  String? foreNameT; //fnt
+  String? familyNameT; //fnt
   String? givenNameT; //gnt
 
   Names({
-    this.foreName,
+    this.familyName,
     this.givenName,
-    this.foreNameT,
+    this.familyNameT,
     this.givenNameT,
   });
 
   factory Names.fromMap(Map names) {
     print("Making names");
     return Names(
-        foreName: names["fn"],
+        familyName: names["fn"],
         givenName: names["gn"],
-        foreNameT: names["fnt"],
+        familyNameT: names["fnt"],
         givenNameT: names["gnt"],
     );
   }

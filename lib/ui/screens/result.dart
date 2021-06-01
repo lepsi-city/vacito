@@ -24,7 +24,9 @@ class ResultScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: <Widget>[
-                    Row(children: [Text("Forename:"), Text(model.names.foreName ?? "")]),
+                    Row(children: [Text("Date of birth:"), Text(model.dgc.dateOfBirth ?? "")]),
+                    Row(children: [Text("Given name:"), Text(model.names.familyNameT ?? "")]),
+                    Row(children: [Text("Family name:"), Text(model.names.familyNameT ?? "")]),
               ],
             ),
           ),
