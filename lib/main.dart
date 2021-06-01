@@ -12,6 +12,7 @@ import 'package:flutter/foundation.dart';
 import 'package:vacito/core/services/preferences_service.dart';
 
 import 'package:vacito/ui/screens/home.dart';
+import 'package:vacito/ui/screens/result.dart';
 
 GetIt getIt = GetIt.instance;
 
@@ -71,6 +72,7 @@ class _MyAppState extends State<MyApp> {
               navigatorKey: navigatorKey,
               routes: {
                 '/': (context) => HomeScreen(),
+                '/result' : (context) => ResultScreen(),
               },
             );
           }
