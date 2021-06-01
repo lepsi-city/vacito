@@ -10,15 +10,18 @@ import 'package:typed_data/typed_data.dart';
 
 import 'package:vacito/core/models/hc1.dart';
 
+import 'package:vacito/ui/screens/result.dart';
+
 class HomeViewModel extends ChangeNotifier {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
   QRViewController? controller;
   String? title;
+  late BuildContext context;
 
 
-  void init() {
-
+  void init(BuildContext cxt) {
+    context = cxt;
   }
 
   void onQRViewCreated(QRViewController controller) {
@@ -58,10 +61,11 @@ class HomeViewModel extends ChangeNotifier {
     );
     print(result.payload);
     Hc1 certmodel = Hc1.fromMap(result.payload);
-    title = "Jmenujete se " + certmodel.certificate!.names!.foreNameT! + " " + certmodel.certificate!.names!.givenNameT!;
-
-    //controller!.pauseCamera();
+    title = "Waiting...";
+    Navigator.push(context,
+      MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),);
   }
+
   @override
   void dispose() {
     controller?.dispose();

@@ -72,7 +72,6 @@ class _MyAppState extends State<MyApp> {
               navigatorKey: navigatorKey,
               routes: {
                 '/': (context) => HomeScreen(),
-                '/result' : (context) => ResultScreen(),
               },
             );
           }

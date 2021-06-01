@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
 
     return ViewModelBuilder<HomeViewModel>.reactive(
       viewModelBuilder: () => HomeViewModel(),
-      onModelReady: (model) => model.init(),
+      onModelReady: (model) => model.init(context),
       builder: (context, model, child) => Scaffold(
           appBar: AppBar(title: Text("Vacito")),
           body: Column(
