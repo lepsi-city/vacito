@@ -18,14 +18,15 @@ class ResultScreen extends StatelessWidget {
         onModelReady: (model) => model.init(hc1),
         builder: (context, model, child) => Scaffold(
           appBar: AppBar(title: Text("Vacito")),
-          body: Column(
-            children: <Widget>[
-              ListView(
-                children: <Widget>[
-                  Row(children: [Text("Forename:"), Text(model.names.foreName ?? "")]),
-                ],
-              ),
-            ],
+          body:
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: <Widget>[
+                    Row(children: [Text("Forename:"), Text(model.names.foreName ?? "")]),
+              ],
+            ),
           ),
         )
     );
