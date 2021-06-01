@@ -27,10 +27,10 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Center(
-                  child: (model.result != null)
+                  child: (model.title != null)
                       ? Text(
-                      'Barcode Type: ${describeEnum(model.result!.format)}   Data: ${model.result!.code}')
-                      : Text('Scan a code'),
+                      model.title!)
+                      : Text('Naskenujte QR kód'),
                 ),
               )
             ],
