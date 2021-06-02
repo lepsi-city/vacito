@@ -7,5 +7,9 @@
     "givenName" : "Given name",
     "familyName" : "Family name",
     "validFrom" : "Valid from",
-    "validTo" : "Valid to"
+    "validTo" : "Valid to",
+    "vaccinationType" : "Vaccine",
+    "unknown" : "Unknown",
+    "verifiedStatusLabel" : "Verified",
+    "verifiedStatus" : "Unknown - not yet implemented"
 }

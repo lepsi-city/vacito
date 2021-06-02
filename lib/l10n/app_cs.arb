@@ -1,5 +1,15 @@
 {
   "scanQrCode": "Naskenujte prosím QR kód",
   "appTitle" : "Vacito",
-  "unknownFormat" : "Neznámý formát QR kódu"
+  "unknownFormat" : "Neznámý formát QR kódu",
+  "processing" : "Zpracovávám...",
+  "dateOfBirth" : "Datum narození",
+  "givenName" : "Jméno",
+  "familyName" : "Příjmení",
+  "validFrom" : "Platné od",
+  "validTo" : "Platné do",
+  "vaccinationType" : "Očkovací látka",
+  "unknown" : "Neznámá",
+  "verifiedStatusLabel" : "Ověřeno",
+  "verifiedStatus" : "Neznámo - zatím neimplementováno"
 }

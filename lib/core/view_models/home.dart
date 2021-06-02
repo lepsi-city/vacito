@@ -39,6 +39,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   processQr(Barcode qrcode) {
+    controller!.pauseCamera();
     print("Format:");
     print(qrcode.format);
     print("Code:");
@@ -46,10 +47,12 @@ class HomeViewModel extends ChangeNotifier {
 
     if (qrcode.format != BarcodeFormat.qrcode) {
       title = AppLocalizations.of(context)!.unknownFormat;
+      controller!.resumeCamera();
       return false;
     }
     if (qrcode.code.substring(0, 4) != "HC1:") {
       title = AppLocalizations.of(context)!.unknownFormat;
+      controller!.resumeCamera();
       return false;
     }
 
@@ -64,7 +67,6 @@ class HomeViewModel extends ChangeNotifier {
     print(result.payload);
     Hc1 certmodel = Hc1.fromMap(result.payload);
     title = AppLocalizations.of(context)!.processing;
-    controller!.pauseCamera();
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),
