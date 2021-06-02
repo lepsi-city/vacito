@@ -3,8 +3,8 @@ description: Vaccination QR code validation app
 
 publish_to: 'none' # So we will not publish anywhere
 
-#this is for debug only. For release versions, we specify that in CI/CD
-version: 0.6.9+42
+#TODO automatic deploy
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

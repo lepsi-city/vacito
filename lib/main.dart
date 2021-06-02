@@ -2,17 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter/services.dart';
 
 import 'package:fimber/fimber.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:vacito/core/services/preferences_service.dart';
 
 import 'package:vacito/ui/screens/home.dart';
-import 'package:vacito/ui/screens/result.dart';
 
 GetIt getIt = GetIt.instance;
 
@@ -41,8 +38,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Future<FirebaseApp>? _initialization;
-  late ThemeMode themeMode;
-  PreferencesService _preferencesService = PreferencesService();
   final GlobalKey<NavigatorState> navigatorKey =
   new GlobalKey<NavigatorState>();
 
@@ -79,6 +74,6 @@ class _MyAppState extends State<MyApp> {
           // Otherwise, show something whilst waiting for initialization to complete
           return CircularProgressIndicator();
         }
-        );
+      );
   }
 }
