@@ -1,5 +1,6 @@
 import 'names.dart';
 import 'v.dart';
+
 class DgcV1 {
   V? v; //v
   String? dateOfBirth; //dob - YYYY-MM-DD
@@ -16,15 +17,13 @@ class DgcV1 {
   factory DgcV1.fromMap(Map certificate) {
     print("Making DcgV1");
     return DgcV1(
-      v: V.fromMap(certificate["v"][0]),
-      dateOfBirth: certificate["dob"],
-      names: Names.fromMap(certificate["nam"]),
-      version: certificate["ver"]
-    );
+        v: V.fromMap(certificate["v"][0]),
+        dateOfBirth: certificate["dob"],
+        names: Names.fromMap(certificate["nam"]),
+        version: certificate["ver"]);
   }
 
   factory DgcV1.defaultValues() {
     return DgcV1();
   }
-
 }

@@ -1,4 +1,5 @@
 import 'dgc_v1.dart';
+
 class Hc1 {
   String? issuer; //claim key 1
   String? issuedAt; //claim key 6
@@ -20,5 +21,4 @@ class Hc1 {
       certificate: DgcV1.fromMap(data[-260][1]),
     );
   }
-
 }

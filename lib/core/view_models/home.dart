@@ -19,10 +19,9 @@ class HomeViewModel extends ChangeNotifier {
   String? title;
   late BuildContext context;
 
-
   void init(BuildContext cxt) {
     context = cxt;
-    if(controller != null) {
+    if (controller != null) {
       controller!.resumeCamera();
     }
   }
@@ -30,10 +29,9 @@ class HomeViewModel extends ChangeNotifier {
   void onQRViewCreated(QRViewController controller) {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
-        result = scanData;
-        processQr(scanData);
-        notifyListeners();
-
+      result = scanData;
+      processQr(scanData);
+      notifyListeners();
     });
   }
 
@@ -43,11 +41,11 @@ class HomeViewModel extends ChangeNotifier {
     print("Code:");
     print(qrcode.code);
 
-    if(qrcode.format != BarcodeFormat.qrcode) {
+    if (qrcode.format != BarcodeFormat.qrcode) {
       title = "Unknown format";
       return false;
     }
-    if(qrcode.code.substring(0, 4) != "HC1:") {
+    if (qrcode.code.substring(0, 4) != "HC1:") {
       title = "Unknown format";
       return false;
     }
@@ -58,16 +56,16 @@ class HomeViewModel extends ChangeNotifier {
 
     final result = Cose.decodeAndVerify(
       inflated,
-      {
-        'kid': '''pem'''
-      },
+      {'kid': '''pem'''},
     );
     print(result.payload);
     Hc1 certmodel = Hc1.fromMap(result.payload);
     title = "Waiting...";
     controller!.pauseCamera();
-    Navigator.push(context,
-      MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),
+    );
   }
 
   @override

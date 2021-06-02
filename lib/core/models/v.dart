@@ -42,5 +42,4 @@ class V {
   factory V.defaultValues() {
     return V();
   }
-
 }

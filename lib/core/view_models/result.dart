@@ -20,12 +20,10 @@ class ResultViewModel extends ChangeNotifier {
   late V v;
   bool verified = false;
 
-
   void init(Hc1? hc) {
-    if(hc == null) {
+    if (hc == null) {
       hc1 = Hc1();
-    }
-    else {
+    } else {
       hc1 = hc;
     }
     setVars();

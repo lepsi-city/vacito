@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:fimber/fimber.dart';
 import 'package:flutter/foundation.dart';
 
-
 import 'package:vacito/ui/screens/home.dart';
 
 GetIt getIt = GetIt.instance;
@@ -20,7 +19,7 @@ Future<void> main() async {
   await dotenv.load(fileName: "assets/env");
 
   await SentryFlutter.init(
-        (options) {
+    (options) {
       options.dsn = dotenv.env['SENTRY_DSN'];
     },
     appRunner: () => runApp(MyApp()),
@@ -39,7 +38,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Future<FirebaseApp>? _initialization;
   final GlobalKey<NavigatorState> navigatorKey =
-  new GlobalKey<NavigatorState>();
+      new GlobalKey<NavigatorState>();
 
   @override
   void initState() {
@@ -56,7 +55,11 @@ class _MyAppState extends State<MyApp> {
           // Check for errors
           if (snapshot.hasError) {
             print(snapshot.error);
-            return Center(child: Text("Něco se pokazilo", textDirection: TextDirection.ltr,));
+            return Center(
+                child: Text(
+              "Něco se pokazilo",
+              textDirection: TextDirection.ltr,
+            ));
           }
 
           // Once complete, show your application
@@ -73,7 +76,6 @@ class _MyAppState extends State<MyApp> {
 
           // Otherwise, show something whilst waiting for initialization to complete
           return CircularProgressIndicator();
-        }
-      );
+        });
   }
 }
