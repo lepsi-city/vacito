@@ -5,6 +5,8 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import 'package:vacito/core/view_models/home.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         viewModelBuilder: () => HomeViewModel(),
         onModelReady: (model) => model.init(context),
         builder: (context, model, child) => Scaffold(
-              appBar: AppBar(title: Text("Vacito")),
+              appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle)),
               body: Column(
                 children: <Widget>[
                   Expanded(
@@ -27,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                     child: Center(
                       child: (model.title != null)
                           ? Text(model.title!)
-                          : Text('Naskenujte QR kód'),
+                          : Text(AppLocalizations.of(context)!.scanQrCode),
                     ),
                   )
                 ],

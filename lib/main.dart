@@ -9,6 +9,9 @@ import 'package:fimber/fimber.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:vacito/ui/screens/home.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 GetIt getIt = GetIt.instance;
 
@@ -67,6 +70,16 @@ class _MyAppState extends State<MyApp> {
             return MaterialApp(
               title: 'Vacito',
               initialRoute: '/',
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                const Locale('en', ''),
+                const Locale('cs', ''),
+              ],
               theme: ThemeData(
                 brightness: Brightness.light,
                 primaryColor: Colors.deepPurple[700],

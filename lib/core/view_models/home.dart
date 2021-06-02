@@ -12,6 +12,9 @@ import 'package:vacito/core/models/hc1.dart';
 
 import 'package:vacito/ui/screens/result.dart';
 
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class HomeViewModel extends ChangeNotifier {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
@@ -42,11 +45,11 @@ class HomeViewModel extends ChangeNotifier {
     print(qrcode.code);
 
     if (qrcode.format != BarcodeFormat.qrcode) {
-      title = "Unknown format";
+      title = AppLocalizations.of(context)!.unknownFormat;
       return false;
     }
     if (qrcode.code.substring(0, 4) != "HC1:") {
-      title = "Unknown format";
+      title = AppLocalizations.of(context)!.unknownFormat;
       return false;
     }
 
@@ -60,7 +63,7 @@ class HomeViewModel extends ChangeNotifier {
     );
     print(result.payload);
     Hc1 certmodel = Hc1.fromMap(result.payload);
-    title = "Waiting...";
+    title = AppLocalizations.of(context)!.processing;
     controller!.pauseCamera();
     Navigator.push(
       context,

@@ -1,0 +1,11 @@
+{
+    "scanQrCode": "Please scan QR code",
+    "appTitle" : "Vacito",
+    "unknownFormat" : "Unknown format",
+    "processing" : "Processing...",
+    "dateOfBirth" : "Date Of Birth",
+    "givenName" : "Given name",
+    "familyName" : "Family name",
+    "validFrom" : "Valid from",
+    "validTo" : "Valid to"
+}

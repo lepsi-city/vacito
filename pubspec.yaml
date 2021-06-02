@@ -28,6 +28,7 @@ dependencies:
   cbor: ^4.0.2
   dart_base45: ^1.0.1
   dart_cose: ^1.1.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +40,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  generate: true
   assets:
     - assets/
 
