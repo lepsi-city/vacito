@@ -23,10 +23,13 @@ class HomeViewModel extends ChangeNotifier {
   late BuildContext context;
 
   void init(BuildContext cxt) {
+    result = null;
+    title = null;
     context = cxt;
     if (controller != null) {
       controller!.resumeCamera();
     }
+    notifyListeners();
   }
 
   void onQRViewCreated(QRViewController controller) {
@@ -71,6 +74,7 @@ class HomeViewModel extends ChangeNotifier {
       context,
       MaterialPageRoute(builder: (context) => ResultScreen(hc1: certmodel)),
     );
+    this.dispose();
   }
 
   @override
